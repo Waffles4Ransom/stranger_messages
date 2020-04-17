@@ -6,7 +6,31 @@
   <title>Stranger Messages</title>
 </head>
 <body>
+    <h1>Stranger Messages</h1>
     <h2>Send a message from the Upside Down</h2>
+
+      <form id="user_form">
+        <label for="username">Please enter a username:</label>
+        <input type="text" id="username">
+        <button>Submit</button>
+      </form>
+
+    
+      <form id="message_form">
+        <label for="name"> Give your message a name: </label>
+        <input type="text" id="name">
+        <label for="content">Message: </label>
+        <input type="text" id="content">
+        <button>Submit</button>
+      </form>
+
+    <div id="message_wall"></div>
+
+    <div id="current_message"></div>
+
+    <div id="messages_container"></div>
+
+
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 </body>
 </html>
