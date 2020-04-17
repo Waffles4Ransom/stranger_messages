@@ -1,11 +1,18 @@
-// console.log("TEST")
+document.addEventListener('DOMContentLoaded', () => {
 
-// const BACKEND_URL = 'http://localhost:3000';
-// fetch(`${BACKEND_URL}/test`)
-//   .then(response => response.json())
-//   .then(parsedResponse => console.log(parsedResponse));
+  // needed variables
+    // messages container 
+    // username form 
+    // message form 
+    // base url for fetch calls
 
-const BACKEND_URL = 'http://localhost:3000';
-fetch(`${BACKEND_URL}/messages`)
-  .then(response => response.json())
-  .then(parsedResponse => console.log(parsedResponse));
+  // fetch call for messages
+
+  // event lisenters 
+    // user form submit 
+    // message form submit 
+    // play message 
+
+
+})
+
