@@ -12,7 +12,7 @@
     <form id="user_form">
       <label for="username">Please enter a username:</label>
       <input type="text" id="username">
-      <button>Submit</button>
+      <input type="submit">
     </form>
   
     <form id="message_form" hidden>
@@ -20,7 +20,7 @@
       <input type="text" id="name">
       <label for="content">Message: </label>
       <input type="text" id="content">
-      <button>Submit</button>
+      <input type="submit">
     </form>
 
     <div id="message_wall"></div>
@@ -32,7 +32,10 @@
       <ul></ul>
     </div>
 
-
+    <script type="application/javascript" src="src/components/app.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/components/user.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/components/message.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/adapters/messageAdapter.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 </body>
 </html>
