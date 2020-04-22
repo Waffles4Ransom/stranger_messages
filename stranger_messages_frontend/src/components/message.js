@@ -1,1 +1,5 @@
-console.log("message class present")
+class Message {
+  constructor() {
+    
+  }
+}

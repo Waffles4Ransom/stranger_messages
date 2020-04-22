@@ -1,7 +1,5 @@
-console.log("user class present")
-
 class User {
-  constructor(username) {
+  constructor(params) {
     this.username = username
   }
 
