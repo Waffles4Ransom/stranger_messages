@@ -2,6 +2,7 @@ class App {
   constructor() {
     this.messages = []
     this.messagesAdapter = new messagesAdapter()
+    this.usersAdapter = new usersAdapter()
     this.fetchandLoadMessages()
     this.initBindingsandEventListeners()
   }
@@ -16,7 +17,9 @@ class App {
 
   createUser(e) {
     e.preventDefault()
-    console.log("user form listening")
+    // console.log(e.target[0].value)
+    let value = e.target[0].value
+    this.usersAdapter.createUser(value)
   }
 
   fetchandLoadMessages() {
