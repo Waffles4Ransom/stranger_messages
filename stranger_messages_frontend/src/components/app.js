@@ -5,6 +5,7 @@ class App {
     this.usersAdapter = new usersAdapter()
     this.fetchandLoadMessages()
     this.initBindingsandEventListeners()
+    this.currentUser = ''
   }
 
   initBindingsandEventListeners() {
@@ -19,7 +20,11 @@ class App {
     e.preventDefault()
     // console.log(e.target[0].value)
     let value = e.target[0].value
-    this.usersAdapter.createUser(value)
+    this.usersAdapter.createUser(value).then()
+    // goals:
+    // render user name to with welcome message
+    // set current user 
+    // hide user form and show message form
   }
 
   fetchandLoadMessages() {
