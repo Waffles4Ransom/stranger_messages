@@ -3,16 +3,16 @@ class usersAdapter {
     this.baseURL = 'http://localhost:3000/users'
   }
 
-  async createUser(value) {
-    const user = {
-      username: value
-    }
+  async createUser(params) {
+    // const user = {
+    //   username: value
+    // }
     const res = await fetch(this.baseURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ value })
+      body: JSON.stringify(params)
     })
     return await res.json()
   }
