@@ -6,4 +6,9 @@ class Message {
     this.user_id = msgJSON.user.id
     this.username = msgJSON.user.username
   }
+
+  get html() {
+    return `<li>${this.name} by ${this.username}</li>`
+  }
+
 }
