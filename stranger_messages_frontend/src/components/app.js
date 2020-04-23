@@ -8,6 +8,15 @@ class App {
 
   initBindingsandEventListeners() {
     this.allMessages = document.querySelector('#messages_ul')
+    this.mform = document.querySelector('#message_form')
+    this.uform = document.querySelector('#user_form') 
+
+    this.uform.addEventListener('submit', this.createUser)
+  }
+
+  createUser(e) {
+    e.preventDefault()
+    console.log("user form listening")
   }
 
   fetchandLoadMessages() {
