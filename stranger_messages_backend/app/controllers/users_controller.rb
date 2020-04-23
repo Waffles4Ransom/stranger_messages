@@ -6,11 +6,12 @@ class UsersController < ApplicationController
   end 
 
   def create 
+    binding.pry
     user = User.new(user_params)
-    if @user.save 
+    if user.save 
       render json: user
     else
-      render json: errors: user.errors
+      # render json: errors: user.errors
     end  
   end 
 
