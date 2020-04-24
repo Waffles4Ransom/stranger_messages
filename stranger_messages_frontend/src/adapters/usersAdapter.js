@@ -4,9 +4,6 @@ class usersAdapter {
   }
 
   async createUser(params) {
-    // const user = {
-    //   username: value
-    // }
     const res = await fetch(this.baseURL, {
       method: 'POST',
       headers: {

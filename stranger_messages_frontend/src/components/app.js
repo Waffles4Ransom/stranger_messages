@@ -16,12 +16,11 @@ class App {
     this.welcome = document.querySelector('#welcome_user')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
+    this.mform.addEventListener('submit', this.createMessage.bind(this))
   }
 
   createUser(e) {
     e.preventDefault()
-    // console.log(this.userInput.value)
-    // let value = e.target[0].value
     let inputVal = this.userInput.value
     this.usersAdapter.createUser({
       user: {
@@ -30,6 +29,23 @@ class App {
     }).then( user => {
       this.currentUser = new User(user)
       this.renderUser()
+    })
+  }
+
+  createMessage(e) {
+    e.preventDefault()
+    this.messagesAdapter.createMessage({
+      message: {
+        name: e.target[0].value,
+        content: e.target[1].value ,
+        user_id: this.currentUser.id
+      }
+    }).then(msg => {
+      e.target[0].value = ''
+      e.target[1].value = ''
+      let newMsg = new Message(msg)
+      this.messages.push(newMsg)
+      this.renderMessages()
     })
   }
 

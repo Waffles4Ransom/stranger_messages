@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if user.save 
       render json: user
     else
-      # render json: errors: user.errors
+      render json: { errors: user.errors}
     end  
   end 
 
