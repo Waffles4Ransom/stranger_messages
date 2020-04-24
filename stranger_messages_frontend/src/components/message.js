@@ -8,7 +8,7 @@ class Message {
   }
 
   get html() {
-    return `<li>${this.name} by ${this.username}</li>`
+    return `<li data-id="${this.id}">${this.name} by ${this.username}</li>`
   }
 
   get currentHTML() {
