@@ -15,9 +15,11 @@ class App {
     this.userInput = document.querySelector('#username')
     this.welcome = document.querySelector('#welcome_user')
     this.currentMsg = document.querySelector('#current_message')
+  
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
+    this.currentMsg.addEventListener('click', this.revealMessage.bind(this))
   }
 
   createUser(e) {
@@ -50,6 +52,15 @@ class App {
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
     })
+  }
+
+  revealMessage(e) {
+    let rbutton = document.querySelector('#reveal')
+    let showMsg = document.querySelector('#reveal_msg')
+    if (e.target === rbutton) {
+      showMsg.hidden === true ? showMsg.hidden = false : showMsg.hidden = true
+      rbutton.innerText === "Reveal Message" ? rbutton.innerText = "Hide Message" : rbutton.innerText = "Reveal Message"
+    }
   }
 
   fetchandLoadMessages() {
