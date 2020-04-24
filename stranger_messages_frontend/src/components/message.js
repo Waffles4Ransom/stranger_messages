@@ -16,7 +16,7 @@ class Message {
     <h4>Current Message</h4>
     <p><strong>${this.name} by ${this.username}</strong></p>
     <p id="reveal_msg" hidden>"${this.content}"</p>
-    <button data-id="${this.id}">Play Message</button> 
+    <button id="play" data-id="${this.id}">Play Message</button> 
     <button id="reveal" data-id="${this.id}">Reveal Message</button>
    `) 
   }
