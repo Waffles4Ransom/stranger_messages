@@ -21,4 +21,9 @@ class Message {
    `) 
   }
 
+  playMessage() {
+    console.log("Now Playing")
+    console.log(`${this.content}`)
+  }
+
 }

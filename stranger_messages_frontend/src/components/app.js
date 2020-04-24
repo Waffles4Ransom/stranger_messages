@@ -63,14 +63,16 @@ class App {
       rbutton.innerText === "Reveal Message" ? rbutton.innerText = "Hide Message" : rbutton.innerText = "Reveal Message"
     } 
     if (e.target === pbutton) {
-      console.log("time to play")
+      let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
+      // console.log(clkdMsg)
+      // set off play sequence for message
+      clkdMsg.playMessage()
     }
   }
 
   queUpMessage(e) {
     if (e.target.tagName.toLowerCase() === "li") {
       let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
-      console.log(clkdMsg)
       this.currentMsg.innerHTML = clkdMsg.currentHTML
     }
   }
