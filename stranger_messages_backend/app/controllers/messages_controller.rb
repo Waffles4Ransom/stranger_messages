@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   def show 
     message = Message.find(params[:id])
     if message 
-      render json: message, except: [:created_at, :updated_at]
+      render json: message.to_json(:include => { :user => {:only => [:id, :username]}}, :except => [:created_at, :updated_at, :user_id])
     else 
       render json: { message: "Message not found"}
     end 

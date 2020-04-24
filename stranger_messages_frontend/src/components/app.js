@@ -14,6 +14,7 @@ class App {
     this.uform = document.querySelector('#user_form') 
     this.userInput = document.querySelector('#username')
     this.welcome = document.querySelector('#welcome_user')
+    this.currentMsg = document.querySelector('#current_message')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
@@ -46,6 +47,8 @@ class App {
       let newMsg = new Message(msg)
       this.messages.push(newMsg)
       this.renderMessages()
+      this.currentMsg.hidden = false
+      this.currentMsg.innerHTML = newMsg.currentHTML
     })
   }
 

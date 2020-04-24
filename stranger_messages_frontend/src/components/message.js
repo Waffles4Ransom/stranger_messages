@@ -11,4 +11,13 @@ class Message {
     return `<li>${this.name} by ${this.username}</li>`
   }
 
+  get currentHTML() {
+   return (`
+    <h4>Current Message</h4>
+    <p><strong>${this.name} by ${this.username}</strong></p>
+    <button data-id="${this.id}">Play Message</button> 
+    <button data-id="${this.id}">Reveal Message</button>
+   `) 
+  }
+
 }
