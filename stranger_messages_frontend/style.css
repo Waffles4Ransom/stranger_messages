@@ -18,3 +18,7 @@ input {
   border-radius: 3px;
   border: 2px solid silver;
 }
+
+#letters {
+  display: flex;
+ }
