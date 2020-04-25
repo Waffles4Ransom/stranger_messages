@@ -22,8 +22,11 @@ class Message {
   }
 
   playMessage() {
-    console.log("Now Playing")
-    console.log(`${this.content}`)
+    console.log(`Now Playing: ${this.content}`)
+    // need to:
+      // 1. santize message and put into array
+      // 2. light a bulb per letter in array
+      // 3. disable other action while playing??
   }
 
 }
