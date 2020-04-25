@@ -22,6 +22,7 @@ input {
 #letters {
   display: flex;
   justify-content: space-evenly;
+  /* width: 70%; */
  }
 
  .letter {
@@ -32,6 +33,8 @@ input {
  #lights {
   display: flex;
   justify-content: space-evenly;
+  padding: 10px;
+  /* width: 70%; */
  }
 
  .lightbulb {
