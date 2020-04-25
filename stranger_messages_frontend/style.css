@@ -41,5 +41,25 @@ input {
   height: 36px;
   width: 18px;
   border-radius: 75%;
-  background-color: orchid;
+  background-color:#e6e6e6;
+}
+
+.lightbulb.pink {
+  background-color: #c91ea1;
+}
+
+.lightbulb.yellow {
+  background-color: #FFC232;
+}
+
+.lightbulb.blue {
+  background-color: #070D89;
+}
+
+.lightbulb.green {
+  background-color: #068A38;
+}
+
+.lightbulb.red {
+  background-color:#AF1100;
 }
