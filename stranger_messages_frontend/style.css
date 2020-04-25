@@ -13,7 +13,7 @@ label {
 
 input {
   width: 20%;
-  margin: 8px;
+  margin: 8px 0px;
   padding: 8px 16px;
   border-radius: 3px;
   border: 2px solid silver;
@@ -21,4 +21,22 @@ input {
 
 #letters {
   display: flex;
+  justify-content: space-evenly;
  }
+
+ .letter {
+  font-size: 50px;
+  color: black;
+ }
+
+ #lights {
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+ .lightbulb {
+  height: 36px;
+  width: 18px;
+  border-radius: 75%;
+  background-color: orchid;
+}
