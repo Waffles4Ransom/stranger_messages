@@ -19,11 +19,13 @@ class App {
     this.welcome = document.querySelector('#welcome_user')
     this.currentMsg = document.querySelector('#current_message')
     this.bulbNodes = document.querySelectorAll('div.lightbulb')
+    this.wall = document.querySelector('#message_wall')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
     this.currentMsg.addEventListener('click', this.messageActions.bind(this))
     this.allMessages.addEventListener('click', this.queUpMessage.bind(this))
+    this.wall.addEventListener('animationend', this.playMessage.bind(this))
   }
 
   createUser(e) {
@@ -80,19 +82,12 @@ class App {
       return this.index = 0
     }
     let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
-    console.log(bulb)
     let color = this.findColor(bulb.dataset.id) 
-    console.log(color)
-    // add animation name of specific color to bulb 
     bulb.classList.add(color)
-    console.log(bulb.classList)
-    // remove after animation finishes
     bulb.addEventListener('animationend', () => {
       bulb.classList.remove(color)
     })
-    // increase index 
     this.index++
-    // recall function
   }
 
   findColor(bulb) {
