@@ -19,10 +19,17 @@ input {
   border: 2px solid silver;
 }
 
+#message_wall {
+  margin: 30px;
+ 
+}
+
 #letters {
   display: flex;
   justify-content: space-evenly;
-  /* width: 70%; */
+  padding: 0px 0px 25px 0px;
+  width: 80%;
+  margin: auto;
  }
 
  .letter {
@@ -34,7 +41,8 @@ input {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
-  /* width: 70%; */
+  width: 80%;
+  margin: auto;
  } 
 
  .lightbulb::before {
@@ -52,7 +60,7 @@ input {
   content: '';
   position: absolute;
   z-index: -1;
-  width: 9%;
+  width: 8%;
   height: 10px;
   border-bottom: #2e2e2c solid 2.5px;
   border-radius: 50%;
