@@ -81,11 +81,37 @@ class App {
     }
     let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
     console.log(bulb)
+    let color = this.findColor(bulb.dataset.id) 
+    console.log(color)
     // need to set animation color based on bulb letter
     // add animation name of specific color to bulb 
     // remove after animation finishes
     // increase index 
     // recall function
+  }
+
+  findColor(bulb) {
+    let color = ""
+    switch( bulb ) {
+      case "c": case "j": case "o": case "v": case "y":
+        color = 'p-lit'
+        break
+      case "f": case "m": case "t": case "x": 
+        color = 'y-lit'
+        break
+      case "b": case "e": case "k": case "u": 
+        color = 'b-lit'
+        break
+      case "d": case "h": case "i": case "l": case "p": case "r": case "w":
+        color = 'g-lit'
+        break
+      case "g": case "n": case "z":
+        color = 'r-lit'
+        break
+      case "a": case "s":
+        color = "lit"
+    } 
+    return color 
   }
 
   queUpMessage(e) {
