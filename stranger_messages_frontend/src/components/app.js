@@ -16,6 +16,7 @@ class App {
     this.userInput = document.querySelector('#username')
     this.welcome = document.querySelector('#welcome_user')
     this.currentMsg = document.querySelector('#current_message')
+    this.bulbs = document.querySelectorAll('div.lightbulb')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
@@ -73,6 +74,14 @@ class App {
 
   playMessage() {
     console.log(this.letterList)
+    if (this.index > (this.letterList.length - 1)) {
+      console.log("done")
+      return this.index = 0
+    }
+    // need to grab all the bulbs to match the letter with the bulb
+    console.log(this.bulbs)
+    let bulb = this.bulbs.find(b => b.dataset.id === letterList[index])
+    console.log(bulb)
   }
 
   queUpMessage(e) {
