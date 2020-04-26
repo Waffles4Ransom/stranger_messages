@@ -83,10 +83,15 @@ class App {
     console.log(bulb)
     let color = this.findColor(bulb.dataset.id) 
     console.log(color)
-    // need to set animation color based on bulb letter
     // add animation name of specific color to bulb 
+    bulb.classList.add(color)
+    console.log(bulb.classList)
     // remove after animation finishes
+    bulb.addEventListener('animationend', () => {
+      bulb.classList.remove(color)
+    })
     // increase index 
+    this.index++
     // recall function
   }
 
