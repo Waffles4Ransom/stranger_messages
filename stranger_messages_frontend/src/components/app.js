@@ -7,6 +7,8 @@ class App {
     this.initBindingsandEventListeners()
     this.currentUser = []
     this.letterList = []
+    this.index = 0
+    this.bulbs = Array.from(this.bulbNodes)
   }
 
   initBindingsandEventListeners() {
@@ -16,7 +18,7 @@ class App {
     this.userInput = document.querySelector('#username')
     this.welcome = document.querySelector('#welcome_user')
     this.currentMsg = document.querySelector('#current_message')
-    this.bulbs = document.querySelectorAll('div.lightbulb')
+    this.bulbNodes = document.querySelectorAll('div.lightbulb')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
@@ -67,7 +69,6 @@ class App {
     if (e.target === pbutton) {
       let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
       this.letterList = clkdMsg.content.split('').filter(l => l !== " ")
-      // console.log(this.letterList)
       this.playMessage()
     }
   }
@@ -78,10 +79,13 @@ class App {
       console.log("done")
       return this.index = 0
     }
-    // need to grab all the bulbs to match the letter with the bulb
-    console.log(this.bulbs)
-    let bulb = this.bulbs.find(b => b.dataset.id === letterList[index])
+    let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
     console.log(bulb)
+    // need to set animation color based on bulb letter
+    // add animation name of specific color to bulb 
+    // remove after animation finishes
+    // increase index 
+    // recall function
   }
 
   queUpMessage(e) {
