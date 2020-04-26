@@ -89,97 +89,49 @@ input {
 }
 
 @keyframes lit {
-  25% {
-    background-color: white;
-    box-shadow: 0 1px 15px 5px white;
-  }
   50% {
     background-color: white;
     box-shadow: 0 4px 25px 10px white;
-  }
-  75% {
-    background-color: white;
-    box-shadow: 0 1px 15px 5px white;
   }
   100% {box-shadow: none;}
  }
 
  @keyframes p-lit {
-  25% {
-    background-color: magenta;
-    box-shadow: 0 1px 15px 5px magenta;
-  }
   50% {
     background-color: magenta;
     box-shadow: 0 4px 25px 10px magenta;
-  }
-  75% {
-    background-color: magenta;
-    box-shadow: 0 1px 15px 5px magenta;
   }
   100% {box-shadow: none;}
  }
 
  @keyframes y-lit {
-  25% {
-    background-color: yellow;
-    box-shadow: 0 1px 15px 5px yellow;
-  }
   50% {
     background-color: yellow;
     box-shadow: 0 4px 25px 10px yellow;
-  }
-  75% {
-    background-color: yellow;
-    box-shadow: 0 1px 15px 5px yellow;
   }
   100% {box-shadow: none;}
  }
 
 @keyframes b-lit {
-  25% {
-    background-color: blue;
-    box-shadow: 0 2px 20px 5px blue;
-  }
   50% {
     background-color: blue;
-    box-shadow: 1px 4px 30px 10px blue;
-  }
-  75% {
-    background-color: blue;
-    box-shadow: 0 2px 20px 5px blue;
+    box-shadow: 0 4px 25px 10px blue;
   }
   100% {box-shadow: none;}
  }
 
  @keyframes g-lit {
-  25% {
-    background-color: lightgreen;
-    box-shadow: 0 1px 15px 5px lightgreen;
-  }
   50% {
     background-color: lightgreen;
     box-shadow: 0 4px 25px 10px lightgreen;
-  }
-  75% {
-    background-color: lightgreen;
-    box-shadow: 0 1px 15px 5px lightgreen;
   }
   100% {box-shadow: none;}
  }
 
  @keyframes r-lit {
-  25% {
-    background-color: red;
-    box-shadow: 0 1px 15px 5px red;
-  }
   50% {
     background-color: red;
     box-shadow: 0 4px 25px 10px red;
-  }
-  75% {
-    background-color: red;
-    box-shadow: 0 1px 15px 5px red;
   }
   100% {box-shadow: none;}
  }
