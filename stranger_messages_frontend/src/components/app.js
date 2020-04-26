@@ -6,6 +6,7 @@ class App {
     this.fetchandLoadMessages()
     this.initBindingsandEventListeners()
     this.currentUser = []
+    this.letterList = []
   }
 
   initBindingsandEventListeners() {
@@ -64,10 +65,14 @@ class App {
     } 
     if (e.target === pbutton) {
       let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
-      // console.log(clkdMsg)
-      // set off play sequence for message
-      clkdMsg.playMessage()
+      this.letterList = clkdMsg.content.split('').filter(l => l !== " ")
+      // console.log(this.letterList)
+      this.playMessage()
     }
+  }
+
+  playMessage() {
+    console.log(this.letterList)
   }
 
   queUpMessage(e) {
