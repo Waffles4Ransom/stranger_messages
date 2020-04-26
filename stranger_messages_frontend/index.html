@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.typekit.net/fhl1zrk.css">
   <link rel="stylesheet" href="style.css">
   <title>Stranger Messages</title>
 </head>
 <body>
-    <h1>Stranger Messages</h1>
+  <div id="top_cont">
+    <h1>STRANGER MESSAGES</h1>
     <h2>Send a message from the Upside Down</h2>
 
     <form id="user_form">
-      <label for="username">Please enter a username:</label>
+      <label for="username">To send a message, please enter a username:</label>
       <input type="text" id="username">
       <input type="submit">
     </form>
 
-    <p id="welcome_user" hidden></p>
+    <h3 id="welcome_user" hidden></h3>
   
     <form id="message_form" hidden>
       <label for="name"> Give your message a name: </label>
@@ -25,17 +27,17 @@
       <input type="text" id="content">
       <input type="submit">
     </form>
-
+  </div>
     <div id="message_wall">
       <div id='lights'>
-        <div data-id='a' class='lightbulb lit'></div>
-        <div data-id='b' class='lightbulb blue b-lit'></div>
-        <div data-id='c' class='lightbulb pink p-lit'></div>
-        <div data-id='d' class='lightbulb green g-lit'></div>
-        <div data-id='e' class='lightbulb blue b-lit'></div>
-        <div data-id='f' class='lightbulb yellow y-lit'></div>
-        <div data-id='g' class='lightbulb red r-lit'></div>
-        <div data-id='h' class='lightbulb green g-lit'></div>
+        <div data-id='a' class='lightbulb'></div>
+        <div data-id='b' class='lightbulb blue'></div>
+        <div data-id='c' class='lightbulb pink'></div>
+        <div data-id='d' class='lightbulb green'></div>
+        <div data-id='e' class='lightbulb blue'></div>
+        <div data-id='f' class='lightbulb yellow'></div>
+        <div data-id='g' class='lightbulb red'></div>
+        <div data-id='h' class='lightbulb green'></div>
       </div>
       <div id='letters'>
         <div class='letter'>A</div>
@@ -92,12 +94,12 @@
         <div class='letter'>Z</div>
       </div>
     </div>
-    
-    <div id="current_message"></div>
 
+    <div id="current_message"></div>
+    
     <div id="messages_container">
-      <h3>Messages</h3>
-      <ul id="messages_ul"></ul>
+      <h3>MESSAGES</h3>
+        <ul id="messages_ul"></ul>
     </div>
 
     <script type="application/javascript" src="src/components/app.js" charset="UTF-8"></script>

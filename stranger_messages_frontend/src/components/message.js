@@ -13,7 +13,7 @@ class Message {
 
   get currentHTML() {
    return (`
-    <h4>Current Message</h4>
+    <h4>CURRENT MESSAGE</h4>
     <p><strong>${this.name} by ${this.username}</strong></p>
     <p id="reveal_msg" hidden>"${this.content}"</p>
     <button id="play" data-id="${this.id}">Play Message</button> 

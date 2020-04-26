@@ -1,5 +1,28 @@
 body {
   background-color: ghostwhite;
+  font-family:"itc-benguiat", serif;
+}
+
+#top_cont {
+  text-align: center;
+}
+
+#messages_container {
+  margin: 30px;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: square;
+  columns: 4;
+}
+
+ul li {
+  padding: 5px;
+}
+
+#current_message {
+  text-align: center;
 }
 
 h1 {
@@ -7,21 +30,43 @@ h1 {
 }
 
 label {
-  display: block;
+  /* display: block; */
   margin: 8px;
 }
 
 input {
-  width: 20%;
+  width: 200px;
   margin: 8px 0px;
   padding: 8px 16px;
   border-radius: 3px;
   border: 2px solid silver;
 }
 
+input[type=submit] {
+  font-family:"itc-benguiat", serif;
+  font-size: 13px;
+}
+
+input[type=submit]:hover {
+  background-color: orchid;
+}
+
+button {
+  width: 200px;
+  margin: 8px 4px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  border: 2px solid silver;
+  font-family:"itc-benguiat", serif;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: orchid;
+}
+
 #message_wall {
   margin: 30px;
- 
 }
 
 #letters {
