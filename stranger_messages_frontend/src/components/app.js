@@ -61,6 +61,10 @@ class App {
       this.renderMessages()
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
+      let success = document.createElement('p')
+      success.innerText = "Message loaded below"
+      this.mform.prepend(success)
+      setTimeout(() => success.remove(), 3000)
     }catch(error) {
       let errMsg = document.createElement('p')
       errMsg.innerText = error
