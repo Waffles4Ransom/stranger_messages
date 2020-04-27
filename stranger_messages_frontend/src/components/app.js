@@ -44,23 +44,29 @@ class App {
     }
   }
 
-  createMessage(e) {
+  async createMessage(e) {
+    try{ 
     e.preventDefault()
-    this.messagesAdapter.createMessage({
+    const msgObj = await this.messagesAdapter.createMessage({
       message: {
         name: e.target[0].value,
         content: e.target[1].value ,
         user_id: this.currentUser.id
       }
-    }).then(msg => {
+    })
       e.target[0].value = ''
       e.target[1].value = ''
-      let newMsg = new Message(msg)
+      let newMsg = new Message(msgObj)
       this.messages.push(newMsg)
       this.renderMessages()
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
-    })
+    }catch(error) {
+      let errMsg = document.createElement('p')
+      errMsg.innerText = error
+      this.mform.prepend(errMsg)
+      setTimeout(() => errMsg.remove(), 3000)
+    }
   }
 
   messageActions(e) {
