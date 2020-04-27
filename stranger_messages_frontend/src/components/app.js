@@ -70,7 +70,7 @@ class App {
     } 
     if (e.target === pbutton) {
       let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
-      this.letterList = clkdMsg.content.split('').filter(l => l !== " ")
+      this.letterList = clkdMsg.content.toLowerCase().split('').filter(l => l !== " ")
       this.playMessage()
     }
   }

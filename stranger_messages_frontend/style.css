@@ -1,6 +1,9 @@
 body {
-  background-color: ghostwhite;
+  background-color: #030D17;
+  color: ghostwhite;
+  /* background-color: ghostwhite; */
   font-family:"itc-benguiat", serif;
+  cursor: default;
 }
 
 #top_cont {
@@ -17,8 +20,14 @@ ul {
   columns: 4;
 }
 
-ul li {
+li {
   padding: 5px;
+}
+
+li:hover {
+  color: #AF1100;
+  text-shadow:4px 2px 10px red;
+
 }
 
 #current_message {
@@ -26,12 +35,16 @@ ul li {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 70px;
+  color: #AF1100;
+  text-shadow:10px 2px 70px red;
 }
 
-/* h3 {
-  text-align: center;
-} */
+h3 {
+  text-decoration-line: overline underline;
+  /* text-decoration-style: double; */
+  /* text-align: center; */
+}
 
 label {
   /* display: block; */
@@ -52,7 +65,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: orchid;
+  background-color: #AF1100;
 }
 
 button {
@@ -66,7 +79,7 @@ button {
 }
 
 button:hover {
-  background-color: orchid;
+  background-color: #AF1100;
 }
 
 #message_wall {
@@ -83,7 +96,8 @@ button:hover {
 
  .letter {
   font-size: 50px;
-  color: black;
+  /* color: black; */
+  color: ghostwhite;
  }
 
  #lights {
@@ -108,7 +122,7 @@ button:hover {
 .lightbulb::after {
   content: '';
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   width: 8%;
   height: 10px;
   border-bottom: #2e2e2c solid 2.5px;
@@ -124,6 +138,7 @@ button:hover {
   width: 18px;
   border-radius: 75%;
   background-color:#e6e6e6;
+  z-index: 1;
 }
 
 .lightbulb.pink {
@@ -147,27 +162,27 @@ button:hover {
 }
 
 .lightbulb.lit {
-  animation: lit 3s;
+  animation: lit 2s;
 } 
 
 .lightbulb.p-lit {
-  animation: p-lit 3s;
+  animation: p-lit 2s;
 }
 
 .lightbulb.y-lit {
-  animation: y-lit 3s;
+  animation: y-lit 2s;
 }
 
 .lightbulb.b-lit {
-  animation: b-lit 3s;
+  animation: b-lit 2s;
 }
 
 .lightbulb.g-lit {
-  animation: g-lit 3s;
+  animation: g-lit 2s;
 }
 
 .lightbulb.r-lit {
-  animation: r-lit 3s;
+  animation: r-lit 2s;
 }
 
 @keyframes lit {

@@ -13,20 +13,12 @@ class Message {
 
   get currentHTML() {
    return (`
-    <h4>CURRENT MESSAGE</h4>
+    <h3>CURRENT MESSAGE</h3>
     <p><strong>${this.name} by ${this.username}</strong></p>
     <p id="reveal_msg" hidden>"${this.content}"</p>
     <button id="play" data-id="${this.id}">Play Message</button> 
     <button id="reveal" data-id="${this.id}">Reveal Message</button>
    `) 
   }
-
-  // playMessage() {
-  //   console.log(`Now Playing: ${this.content}`)
-  //   // need to:
-  //     // 1. santize message and put into array
-  //     // 2. light a bulb per letter in array
-  //     // 3. disable other action while playing??
-  // }
 
 }
