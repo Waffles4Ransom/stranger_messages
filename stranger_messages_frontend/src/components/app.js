@@ -28,17 +28,20 @@ class App {
     this.wall.addEventListener('animationend', this.playMessage.bind(this))
   }
 
-  createUser(e) {
+  async createUser(e) {
+    try {
     e.preventDefault()
-    let inputVal = this.userInput.value
-    this.usersAdapter.createUser({
-      user: {
-        username: inputVal
-      }
-    }).then( user => {
-      this.currentUser = new User(user)
-      this.renderUser()
+    const userObj =  await this.usersAdapter.createUser({
+      user: { username: this.userInput.value}
     })
+      this.currentUser = new User(userObj)
+      return this.renderUser()
+    }catch(error) {
+      let errMsg = document.createElement('p')
+      errMsg.innerText = error
+      this.uform.prepend(errMsg)
+      // alert(error)
+    }
   }
 
   createMessage(e) {
