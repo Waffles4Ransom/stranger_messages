@@ -211,8 +211,8 @@ button:hover {
 
 @keyframes b-lit {
   50% {
-    background-color: blue;
-    box-shadow: 0 4px 25px 10px blue;
+    background-color: #08F7FE;
+    box-shadow: 0 4px 25px 10px #08F7FE;
   }
   100% {box-shadow: none;}
  }
