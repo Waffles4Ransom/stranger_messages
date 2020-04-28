@@ -89,18 +89,20 @@ class App {
   }
 
   playMessage() {
-    console.log(this.letterList)
-    if (this.index > (this.letterList.length - 1)) {
-      console.log("done")
-      return this.index = 0
-    }
-    let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
-    let color = this.findColor(bulb.dataset.id) 
-    bulb.classList.add(color)
-    bulb.addEventListener('animationend', () => {
-      bulb.classList.remove(color)
-    })
-    this.index++
+    setTimeout(() => {
+      console.log(this.letterList[this.index])
+      if (this.index > (this.letterList.length - 1)) {
+        console.log("done")
+        return this.index = 0
+      }
+      let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
+      let color = this.findColor(bulb.dataset.id)
+      bulb.classList.add(color)
+      bulb.addEventListener('animationend', () => {
+        bulb.classList.remove(color)
+      })
+      this.index++
+    }, 0)
   }
 
   findColor(bulb) {
