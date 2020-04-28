@@ -39,8 +39,9 @@ class App {
     }catch(error) {
       let errMsg = document.createElement('p')
       errMsg.innerText = error
+      errMsg.setAttribute('class', 'error')
       this.uform.prepend(errMsg)
-      // alert(error)
+      setTimeout(() => errMsg.remove(), 4000)
     }
   }
 
@@ -68,23 +69,25 @@ class App {
     }catch(error) {
       let errMsg = document.createElement('p')
       errMsg.innerText = error
+      errMsg.setAttribute('class', 'error')
       this.mform.prepend(errMsg)
       setTimeout(() => errMsg.remove(), 3000)
     }
   }
 
   messageActions(e) {
-    let rbutton = document.querySelector('#reveal')
-    let pbutton = document.querySelector('#play')
+    this.rbutton = document.querySelector('#reveal')
+    this.pbutton = document.querySelector('#play')
     let showMsg = document.querySelector('#reveal_msg')
-    if (e.target === rbutton) {
+    if (e.target === this.rbutton) {
       showMsg.hidden === true ? showMsg.hidden = false : showMsg.hidden = true
-      rbutton.innerText === "Reveal Message" ? rbutton.innerText = "Hide Message" : rbutton.innerText = "Reveal Message"
+      this.rbutton.innerText = (this.rbutton.innerText === "Reveal Message") ?  "Hide Message" :  "Reveal Message"
     } 
-    if (e.target === pbutton) {
+    if (e.target === this.pbutton) {
       let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
       this.letterList = clkdMsg.content.toLowerCase().split('').filter(l => l !== " ")
       this.playMessage()
+      this.pbutton.disabled = true
     }
   }
 
@@ -93,6 +96,7 @@ class App {
       console.log(this.letterList[this.index])
       if (this.index > (this.letterList.length - 1)) {
         console.log("done")
+        this.pbutton.disabled = false
         return this.index = 0
       }
       let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
@@ -139,7 +143,7 @@ class App {
   fetchandLoadMessages() {
     this.messagesAdapter.getMessages().then(msgs => { 
       this.messages = msgs.map(msg => new Message(msg))
-      console.log(this.messages)
+      // console.log(this.messages)
       this.renderMessages()
     })
   }

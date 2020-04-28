@@ -1,7 +1,6 @@
 body {
   background-color: #030D17;
   color: ghostwhite;
-  /* background-color: ghostwhite; */
   font-family:"itc-benguiat", serif;
   cursor: default;
 }
@@ -27,7 +26,6 @@ li {
 li:hover {
   color: #AF1100;
   text-shadow:4px 2px 10px red;
-
 }
 
 #current_message {
@@ -42,12 +40,13 @@ h1 {
 
 h3 {
   text-decoration-line: overline underline;
-  /* text-decoration-style: double; */
-  /* text-align: center; */
+}
+
+p.error {
+  color: #AF1100;
 }
 
 label {
-  /* display: block; */
   margin: 8px;
 }
 
@@ -96,7 +95,6 @@ button:hover {
 
  .letter {
   font-size: 50px;
-  /* color: black; */
   color: ghostwhite;
  }
 
