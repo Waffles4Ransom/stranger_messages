@@ -20,6 +20,13 @@ class messagesAdapter {
     return await res.json()
   }
 
+  async deleteMessage(id) {
+    const res = await fetch(`${this.baseURL}/${id}`, {
+      method: 'DELETE'
+    })
+    // await this.checkStatus(res)
+  }
+
   async checkStatus(res) {
     if (res.status > 299 || res.status < 200) {
       const eMsg = await res.json()

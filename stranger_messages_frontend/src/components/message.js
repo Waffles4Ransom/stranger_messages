@@ -21,4 +21,8 @@ class Message {
    `) 
   }
 
+  get deleteBtn() {
+    return `<button id="delete" data-id="${this.id}">Delete Message</button>`
+  }
+
 }

@@ -62,6 +62,8 @@ class App {
       this.renderMessages()
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
+      let dltBtn = newMsg.deleteBtn
+      this.currentMsg.innerHTML += dltBtn
       let success = document.createElement('p')
       success.innerText = "Message loaded below"
       this.mform.prepend(success)
@@ -78,6 +80,7 @@ class App {
   messageActions(e) {
     this.rbutton = document.querySelector('#reveal')
     this.pbutton = document.querySelector('#play')
+    this.dbutton = document.querySelector('#delete')
     let showMsg = document.querySelector('#reveal_msg')
     if (e.target === this.rbutton) {
       showMsg.hidden === true ? showMsg.hidden = false : showMsg.hidden = true
@@ -88,6 +91,13 @@ class App {
       this.letterList = clkdMsg.content.toLowerCase().split('').filter(l => l !== " ")
       this.playMessage()
       this.pbutton.disabled = true
+    }
+    if (e.target === this.dbutton) {
+      const msgID = e.target.dataset.id
+      this.messagesAdapter.deleteMessage(msgID)
+      this.currentMsg.innerHTML = ' '
+      this.messages = this.messages.filter(m => m.id !== parseInt(msgID))
+      this.renderMessages()
     }
   }
 
@@ -135,8 +145,12 @@ class App {
 
   queUpMessage(e) {
     if (e.target.tagName.toLowerCase() === "li") {
-      let clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
-      this.currentMsg.innerHTML = clkdMsg.currentHTML
+      this.clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
+      this.currentMsg.innerHTML = this.clkdMsg.currentHTML
+      if (this.currentUser.id === this.clkdMsg.user_id) {
+        let dltBtn = this.clkdMsg.deleteBtn
+        this.currentMsg.innerHTML += dltBtn
+      }
     }
   }
 
