@@ -2,7 +2,9 @@
 
 A place to send messages from the Upside Down. 
 
-Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend and a Rails API on the backend. This is inspired by Netflix's <a href="https://www.netflix.com/title/80057281">Stranger Things</a> 
+Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend and a Rails API on the backend. This is inspired by Netflix's <a href="https://www.netflix.com/title/80057281">Stranger Things</a>.
+
+<img src="https://i.imgur.com/6YNgABsl.png" alt="screenshot of Stranger Messages">
 
 ### Features
 * Users may create messages to be played out by the light wall or play messages sent by other users
@@ -19,4 +21,4 @@ Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend 
 css lights adapted from <a href="https://codepen.io/tobyj/pen/QjvEex">Pure CSS Christmas Lights by tobyj</a>
 
 ### License
-<a href="">MIT License</a>
+<a href="https://github.com/Waffles4Ransom/stranger_messages/blob/master/LICENSE">MIT License</a>
