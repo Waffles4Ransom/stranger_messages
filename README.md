@@ -1,26 +1,22 @@
-# README
+# Stranger Messages
 
-## Stranger Messages
+A place to send messages from the Upside Down. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend and a Rails API on the backend. This is inspired by Netflix's <a href="https://www.netflix.com/title/80057281">Stranger Things</a> 
 
-Things you may want to cover:
+### Features
+* Users may create messages to be played out by the light wall or play messages sent by other users
 
-* Ruby version
+### Getting Started
+* fork and clone repo
+* run bundle install
+* cd into `stranger_messages_backend` 
+* to start server, run `rails s`
+* in a new terminal tab, cd into `stranger_messages_frontend` 
+* run `open index.html`
 
-* System dependencies
+### Acknowledgements
+css lights adapted from <a href="https://codepen.io/tobyj/pen/QjvEex">Pure CSS Christmas Lights by tobyj</a>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### License
+<a href="">MIT License</a>
