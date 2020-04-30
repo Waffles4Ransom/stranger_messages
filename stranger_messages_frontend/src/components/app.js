@@ -154,12 +154,10 @@ class App {
     }
   }
 
-  fetchandLoadMessages() {
-    this.messagesAdapter.getMessages().then(msgs => { 
-      this.messages = msgs.map(msg => new Message(msg))
-      // console.log(this.messages)
-      this.renderMessages()
-    })
+  async fetchandLoadMessages() {
+    const msgs = await this.messagesAdapter.getMessages() 
+    this.messages = msgs.map(msg => new Message(msg))
+    this.renderMessages()
   }
 
   renderMessages() {
