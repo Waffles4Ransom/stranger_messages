@@ -22,6 +22,7 @@ class App {
     this.lengthSort = document.querySelector('#length_sort')
     this.userSort = document.querySelector('#user_sort')
     this.search = document.querySelector('#search')
+    this.waffle = document.querySelector('#eleven')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
@@ -31,6 +32,7 @@ class App {
     this.lengthSort.addEventListener('click', this.handleLengthSort.bind(this))
     this.userSort.addEventListener('click', this.handleUserSort.bind(this))
     this.search.addEventListener('input', this.handleSearch.bind(this))
+    this.waffle.addEventListener('click', this.toggleBackground.bind(this))
   }
 
   async createUser(e) {
@@ -188,5 +190,13 @@ class App {
     const query =  e.target.value.toLowerCase()
     const matches = this.messages.filter(m => m.name.toLowerCase().includes(query))
     this.renderMessages(matches)
+  }
+
+  toggleBackground() {
+    document.body.classList.toggle('waffle_time')
+    const audio = new Audio("https://www.televisiontunes.com/uploads/audio/Stranger%20Things.mp3")
+    audio.play()
+    this.waffle.disabled = true
+    audio.addEventListener('ended', ()=> this.waffle.disabled = false)
   }
 }

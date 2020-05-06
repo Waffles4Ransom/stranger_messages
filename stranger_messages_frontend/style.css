@@ -5,6 +5,13 @@ body {
   cursor: default;
 }
 
+.waffle_time {
+  background-image: url(images/waffle.jpeg);
+  background-size: cover;
+  color: black;
+  font-weight: bold;
+}
+
 #top_cont {
   text-align: center;
 }
@@ -108,7 +115,7 @@ button.sort {
 
  .letter {
   font-size: 50px;
-  color: ghostwhite;
+  /* color: ghostwhite; */
  }
 
  #lights {
