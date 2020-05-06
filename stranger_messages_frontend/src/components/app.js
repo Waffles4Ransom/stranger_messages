@@ -42,11 +42,7 @@ class App {
       this.currentUser = new User(userObj)
       return this.renderUser()
     }catch(error) {
-      let errMsg = document.createElement('p')
-      errMsg.innerText = error
-      errMsg.setAttribute('class', 'error')
-      this.uform.prepend(errMsg)
-      setTimeout(() => errMsg.remove(), 4000)
+      this.errorMessages(error, this.uform)
     }
   }
 
@@ -74,12 +70,16 @@ class App {
       this.mform.prepend(success)
       setTimeout(() => success.remove(), 3000)
     }catch(error) {
-      let errMsg = document.createElement('p')
-      errMsg.innerText = error
-      errMsg.setAttribute('class', 'error')
-      this.mform.prepend(errMsg)
-      setTimeout(() => errMsg.remove(), 3000)
+      this.errorMessages(error, this.mform)
     }
+  }
+
+  errorMessages(err, form) {
+    let errMsg = document.createElement('p')
+    errMsg.innerText = err
+    errMsg.setAttribute('class', 'error')
+    form.prepend(errMsg)
+    setTimeout(() => errMsg.remove(), 4000)
   }
 
   messageActions(e) {
