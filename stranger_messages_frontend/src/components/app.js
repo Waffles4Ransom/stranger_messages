@@ -19,14 +19,18 @@ class App {
     this.currentMsg = document.querySelector('#current_message')
     this.bulbs = Array.from(document.querySelectorAll('div.lightbulb'))
     this.wall = document.querySelector('#message_wall')
-    this.sort = document.querySelector('#sort')
+    this.lengthSort = document.querySelector('#length_sort')
+    this.userSort = document.querySelector('#user_sort')
+    this.search = document.querySelector('#search')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
     this.currentMsg.addEventListener('click', this.messageActions.bind(this))
     this.allMessages.addEventListener('click', this.queUpMessage.bind(this))
     this.wall.addEventListener('animationend', this.playMessage.bind(this))
-    this.sort.addEventListener('click', this.handleSort.bind(this))
+    this.lengthSort.addEventListener('click', this.handleLengthSort.bind(this))
+    this.userSort.addEventListener('click', this.handleUserSort.bind(this))
+    this.search.addEventListener('input', this.handleSearch.bind(this))
   }
 
   async createUser(e) {
@@ -172,8 +176,19 @@ class App {
     this.mform.hidden = false
   }
 
-  handleSort() {
+  handleLengthSort() {
     const sorted = [...this.messages].sort((a,b) => a.content.length - b.content.length)
     this.renderMessages(sorted)
+  }
+
+  handleUserSort() {
+    const sorted = [...this.messages].sort(Message.alphaSort)
+    this.renderMessages(sorted)
+  }
+
+  handleSearch(e) {
+    const query =  e.target.value.toLowerCase()
+    const matches = this.messages.filter(m => m.name.toLowerCase().includes(query))
+    this.renderMessages(matches)
   }
 }

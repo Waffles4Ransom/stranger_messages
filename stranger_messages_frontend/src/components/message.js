@@ -25,4 +25,16 @@ class Message {
     return `<button id="delete" data-id="${this.id}">Delete Message</button>`
   }
 
+  static alphaSort(a,b) {
+    const A = a.username.toLowerCase()
+    const B = b.username.toLowerCase()
+    let comp = 0 
+    if (A > B) {
+      comp = 1
+    } else if (A < B) {
+      comp = -1
+    }
+    return comp
+  }
+
 }

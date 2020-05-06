@@ -68,6 +68,11 @@ input[type=submit]:hover {
   background-color: #AF1100;
 }
 
+input#search {
+  padding: 4px 8px;
+  margin: 6px 0;
+}
+
 button {
   width: 200px;
   margin: 8px 4px;
@@ -80,6 +85,13 @@ button {
 
 button:hover {
   background-color: #AF1100;
+}
+
+button.sort {
+  font-size: 12px;
+  padding: 4px 8px;
+  width: 14%;
+  float: right;
 }
 
 #message_wall {
