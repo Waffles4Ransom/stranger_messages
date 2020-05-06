@@ -1,10 +1,10 @@
 class Message {
-  constructor(msgJSON) {
-    this.id = msgJSON.id
-    this.name = msgJSON.name 
-    this.content = msgJSON.content 
-    this.user_id = msgJSON.user.id
-    this.username = msgJSON.user.username
+  constructor(params) {
+    this.id = params.id
+    this.name = params.name 
+    this.content = params.content 
+    this.user_id = params.user.id
+    this.username = params.user.username
   }
 
   get html() {

@@ -24,7 +24,6 @@ class messagesAdapter {
     const res = await fetch(`${this.baseURL}/${id}`, {
       method: 'DELETE'
     })
-    // await this.checkStatus(res)
   }
 
   async checkStatus(res) {

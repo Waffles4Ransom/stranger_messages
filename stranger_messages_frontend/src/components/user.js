@@ -1,7 +1,7 @@
 class User {
-  constructor(userJSON) {
-    this.username = userJSON.username
-    this.id = userJSON.id
+  constructor(user) {
+    this.username = user.username
+    this.id = user.id
   }
 }
 

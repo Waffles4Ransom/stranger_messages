@@ -8,7 +8,6 @@ class App {
     this.currentUser = []
     this.letterList = []
     this.index = 0
-    this.bulbs = Array.from(this.bulbNodes)
   }
 
   initBindingsandEventListeners() {
@@ -18,14 +17,16 @@ class App {
     this.userInput = document.querySelector('#username')
     this.welcome = document.querySelector('#welcome_user')
     this.currentMsg = document.querySelector('#current_message')
-    this.bulbNodes = document.querySelectorAll('div.lightbulb')
+    this.bulbs = Array.from(document.querySelectorAll('div.lightbulb'))
     this.wall = document.querySelector('#message_wall')
+    this.sort = document.querySelector('#sort')
 
     this.uform.addEventListener('submit', this.createUser.bind(this))
     this.mform.addEventListener('submit', this.createMessage.bind(this))
     this.currentMsg.addEventListener('click', this.messageActions.bind(this))
     this.allMessages.addEventListener('click', this.queUpMessage.bind(this))
     this.wall.addEventListener('animationend', this.playMessage.bind(this))
+    this.sort.addEventListener('click', this.handleSort.bind(this))
   }
 
   async createUser(e) {
@@ -169,5 +170,10 @@ class App {
     this.welcome.hidden = false
     this.welcome.innerHTML = `Welcome ${this.currentUser.username}`
     this.mform.hidden = false
+  }
+
+  handleSort() {
+    const sorted = [...this.messages].sort((a,b) => a.content.length - b.content.length)
+    this.allMessages.innerHTML = sorted.map(msg => msg.html).join('')
   }
 }
