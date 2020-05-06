@@ -16,8 +16,12 @@ class messagesAdapter {
       },
       body: JSON.stringify(params)
     })
-    await this.checkStatus(res)
-    return await res.json()
+    if (res.ok) {
+      return await res.json()
+    } else {
+      const eMsg = await res.json().errors
+      throw new Error(eMsg.errors)
+    }
   }
 
   async deleteMessage(id) {
@@ -25,11 +29,5 @@ class messagesAdapter {
       method: 'DELETE'
     })
   }
-
-  async checkStatus(res) {
-    if (res.status > 299 || res.status < 200) {
-      const eMsg = await res.json()
-      throw new Error(eMsg.errors)
-    }
-  }
+  
 }

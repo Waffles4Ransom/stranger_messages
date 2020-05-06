@@ -11,12 +11,9 @@ class usersAdapter {
       },
       body: JSON.stringify(params)
     })
-    await this.checkStatus(res)
-    return await res.json()
-  }
-
-  async checkStatus(res) {
-    if (res.status > 299 || res.status < 200) {
+    if (res.ok) {
+      return await res.json()
+    } else {
       const eMsg = await res.json()
       throw new Error(eMsg.errors)
     }
