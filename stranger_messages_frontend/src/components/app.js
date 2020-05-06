@@ -60,7 +60,7 @@ class App {
       e.target[1].value = ''
       let newMsg = new Message(msgObj)
       this.messages.push(newMsg)
-      this.renderMessages()
+      this.renderMessages(this.messages)
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
       let dltBtn = newMsg.deleteBtn
@@ -98,7 +98,7 @@ class App {
       this.messagesAdapter.deleteMessage(msgID)
       this.currentMsg.innerHTML = ' '
       this.messages = this.messages.filter(m => m.id !== parseInt(msgID))
-      this.renderMessages()
+      this.renderMessages(this.messages)
     }
   }
 
@@ -158,11 +158,11 @@ class App {
   async fetchandLoadMessages() {
     const msgs = await this.messagesAdapter.getMessages() 
     this.messages = msgs.map(msg => new Message(msg))
-    this.renderMessages()
+    this.renderMessages(this.messages)
   }
 
-  renderMessages() {
-    this.allMessages.innerHTML = this.messages.map(msg => msg.html).join('')
+  renderMessages(arr) {
+    this.allMessages.innerHTML = arr.map(msg => msg.html).join('')
   }
 
   renderUser() {
@@ -174,6 +174,6 @@ class App {
 
   handleSort() {
     const sorted = [...this.messages].sort((a,b) => a.content.length - b.content.length)
-    this.allMessages.innerHTML = sorted.map(msg => msg.html).join('')
+    this.renderMessages(sorted)
   }
 }
