@@ -63,8 +63,7 @@ class App {
       this.renderMessages(this.messages)
       this.currentMsg.hidden = false
       this.currentMsg.innerHTML = newMsg.currentHTML
-      let dltBtn = newMsg.deleteBtn
-      this.currentMsg.innerHTML += dltBtn
+      this.currentMsg.innerHTML += newMsg.deleteBtn
       let success = document.createElement('p')
       success.innerText = "Message loaded below"
       this.mform.prepend(success)
@@ -153,8 +152,7 @@ class App {
       this.clkdMsg = this.messages.find(msg => msg.id == e.target.dataset.id)
       this.currentMsg.innerHTML = this.clkdMsg.currentHTML
       if (this.currentUser.id === this.clkdMsg.user_id) {
-        let dltBtn = this.clkdMsg.deleteBtn
-        this.currentMsg.innerHTML += dltBtn
+        this.currentMsg.innerHTML += this.clkdMsg.deleteBtn
       }
     }
   }
