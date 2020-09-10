@@ -4,7 +4,7 @@ A place to send messages from the Upside Down.
 
 Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend and a Rails API on the backend. This is inspired by Netflix's <a href="https://www.netflix.com/title/80057281">Stranger Things</a>.
 
-<img src="https://i.imgur.com/6YNgABsl.png" alt="screenshot of Stranger Messages">
+![Stranger Messages Screenshot](stranger_messages_frontend/images/SM_screenshot.png)
 
 ### Features
 * Users may create messages to be played out by the light wall or play messages sent by other users
