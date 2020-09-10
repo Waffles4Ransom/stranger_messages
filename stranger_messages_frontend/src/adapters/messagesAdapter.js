@@ -19,7 +19,7 @@ class messagesAdapter {
     if (res.ok) {
       return await res.json()
     } else {
-      const eMsg = await res.json().errors
+      const eMsg = await res.json()
       throw new Error(eMsg.errors)
     }
   }

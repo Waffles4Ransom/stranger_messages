@@ -12,7 +12,7 @@
     <h1>STRANGER MESSAGES</h1>
     <h2>Send a message from the Upside Down</h2>
 
-    <form id="user_form">
+    <form id="user_form" autocomplete="off">
       <label for="username">To send a message, please enter a username:</label>
       <input type="text" id="username" required>
       <input type="submit">
@@ -20,7 +20,7 @@
 
     <h3 id="welcome_user" hidden></h3>
   
-    <form id="message_form" hidden>
+    <form id="message_form" autocomplete="off" hidden>
       <label for="name"> Give your message a name: </label>
       <input type="text" id="name" required>
       <label for="content">Message: </label>
