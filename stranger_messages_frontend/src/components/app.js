@@ -50,14 +50,14 @@ class App {
 
   async createMessage(e) {
     try{ 
-    e.preventDefault()
-    const msgObj = await this.messagesAdapter.createMessage({
-      message: {
-        name: e.target[0].value,
-        content: e.target[1].value ,
-        user_id: this.currentUser.id
-      }
-    })
+      e.preventDefault()
+      const msgObj = await this.messagesAdapter.createMessage({
+        message: {
+          name: e.target[0].value,
+          content: e.target[1].value ,
+          user_id: this.currentUser.id
+        }
+      })
       e.target[0].value = ''
       e.target[1].value = ''
       let newMsg = new Message(msgObj)
@@ -194,9 +194,9 @@ class App {
 
   toggleBackground() {
     document.body.classList.toggle('waffle_time')
-    const audio = new Audio("https://www.televisiontunes.com/uploads/audio/Stranger%20Things.mp3")
-    audio.play()
-    this.waffle.disabled = true
-    audio.addEventListener('ended', ()=> this.waffle.disabled = false)
+    // const audio = new Audio("https://www.televisiontunes.com/uploads/audio/Stranger%20Things.mp3")
+    // audio.play()
+    // this.waffle.disabled = true
+    // audio.addEventListener('ended', ()=> this.waffle.disabled = false)
   }
 }
