@@ -6,6 +6,8 @@ Stranger Messages is a SPA built with JavaScript, CSS, and HTML on the frontend 
 
 ![Stranger Messages Screenshot](stranger_messages_frontend/images/SM_screenshot.png)
 
+<a href="https://youtu.be/tp_hFN_70oQ">Demo Video</a>
+
 ### Features
 * Users may create messages to be played out by the light wall or play messages sent by other users
 
