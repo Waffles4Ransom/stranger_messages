@@ -3,6 +3,9 @@ body {
   color: ghostwhite;
   font-family:"itc-benguiat", serif;
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .waffle_time {
@@ -10,6 +13,13 @@ body {
   background-size: cover;
   color: black;
   font-weight: bold;
+}
+
+footer {
+  opacity: 0.4;
+  font-size: .75em;
+  text-align: center;
+  flex: 1;
 }
 
 #top_cont {
