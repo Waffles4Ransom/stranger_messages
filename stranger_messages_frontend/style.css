@@ -259,3 +259,23 @@ button.sort {
   }
   100% {box-shadow: none;}
  }
+
+ .phone {
+   display: none;
+ }
+
+ @media only screen and (max-width: 600px) {
+  h1 {font-size: 3.2em;}
+  .respond {display: none;}
+  #user_form {display: none;}
+  .phone {display: initial;}
+}
+
+@media only screen and (max-width: 830px) {
+  h1 {font-size: 3.2em;}
+  #lights {width: 100%; padding: 0;} 
+  #letters {width: 100%;}
+  button.sort {width: 20%;}
+  ul { columns: 2;}
+  #messages_ul {margin: 4%}
+}
