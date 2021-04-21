@@ -97,6 +97,8 @@ class App {
       this.letterList = clkdMsg.content.toLowerCase().split('').filter(l => l !== " ")
       this.playMessage()
       this.pbutton.disabled = true
+      this.pbutton.innerHTML = "Playing"
+      window.scrollTo(0,290)
     }
     if (e.target === this.dbutton) {
       const msgID = e.target.dataset.id
@@ -113,6 +115,7 @@ class App {
       if (this.index > (this.letterList.length - 1)) {
         console.log("done")
         this.pbutton.disabled = false
+        this.pbutton.innerHTML = "Play Message"
         return this.index = 0
       }
       let bulb = this.bulbs.find(b => b.dataset.id === this.letterList[this.index])
@@ -156,6 +159,7 @@ class App {
       if (this.currentUser.id === this.clkdMsg.user_id) {
         this.currentMsg.innerHTML += this.clkdMsg.deleteBtn
       }
+      window.scrollTo(0,510)
     }
   }
 
@@ -194,6 +198,7 @@ class App {
 
   toggleBackground() {
     document.body.classList.toggle('waffle_time')
+    this.waffle.innerHTML == "Upside Down Mode" ? this.waffle.innerHTML = "Eleven Mode" : this.waffle.innerHTML = "Upside Down Mode"
     // const audio = new Audio("https://www.televisiontunes.com/uploads/audio/Stranger%20Things.mp3")
     // audio.play()
     // this.waffle.disabled = true

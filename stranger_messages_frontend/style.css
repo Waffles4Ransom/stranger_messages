@@ -15,6 +15,11 @@ body {
   font-weight: bold;
 }
 
+#eleven {
+  text-transform: uppercase ;
+  width: 10rem;
+}
+
 footer {
   opacity: 0.4;
   font-size: .75em;
@@ -27,7 +32,7 @@ footer {
 }
 
 #messages_container {
-  margin: 30px;
+  margin: 2.5rem;
 }
 
 ul {
@@ -37,7 +42,7 @@ ul {
 }
 
 li {
-  padding: 5px;
+  padding: .375rem;
 }
 
 li:hover {
@@ -104,15 +109,20 @@ button:hover {
   background-color: #AF1100;
 }
 
-button.sort {
-  font-size: 12px;
-  padding: 4px 8px;
-  width: 14%;
+.right {
   float: right;
 }
 
+button.right {
+  font-size: .825rem;
+  padding: .25rem .50rem;
+  width: 10rem;
+}
+
+/* LIGHTBULBS */
+
 #message_wall {
-  margin: 30px;
+  margin: 2.75rem;
 }
 
 #letters {
@@ -121,10 +131,7 @@ button.sort {
   padding: 0px 0px 25px 0px;
   width: 80%;
   margin: auto;
- }
-
- .letter {
-  font-size: 50px;
+  font-size: 3.25rem;
  }
 
  #lights {
@@ -260,6 +267,8 @@ button.sort {
   100% {box-shadow: none;}
  }
 
+/* RESPONSIVE */
+
  .phone {
    display: none;
  }
@@ -272,10 +281,10 @@ button.sort {
 }
 
 @media only screen and (max-width: 830px) {
+  button.right {width: 5.5rem;}
   h1 {font-size: 3.2em;}
+  ul { columns: 2;}
   #lights {width: 100%; padding: 0;} 
   #letters {width: 100%;}
-  button.sort {width: 20%;}
-  ul { columns: 2;}
-  #messages_ul {margin: 4%}
+  #messages_container {margin: 1.5rem;}
 }
