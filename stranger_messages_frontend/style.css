@@ -72,6 +72,10 @@ label {
   margin: 8px;
 }
 
+.msg_form {
+  display: inline-block;
+}
+
 input {
   width: 200px;
   margin: 8px 0px;

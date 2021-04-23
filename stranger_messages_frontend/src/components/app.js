@@ -70,6 +70,7 @@ class App {
       success.innerText = "Message loaded below"
       this.mform.prepend(success)
       setTimeout(() => success.remove(), 3000)
+      window.scrollTo(0,610)
     }catch(error) {
       this.errorMessages(error, this.mform)
     }
@@ -98,7 +99,7 @@ class App {
       this.playMessage()
       this.pbutton.disabled = true
       this.pbutton.innerHTML = "Playing"
-      window.scrollTo(0,290)
+      window.scrollTo(0,315)
     }
     if (e.target === this.dbutton) {
       const msgID = e.target.dataset.id
